@@ -18,7 +18,8 @@ This is a premium, high-conversion, lead-generating landing page designed specif
 - **Google Fonts** (Inter & Poppins for an institutional feel)
 
 ## 🚀 Live Demo
-Once deployed on Vercel, the site will be accessible live on the internet!
+The site is deployed and accessible right here:
+👉 **[tirupur-home-tuition.vercel.app](https://tirupur-home-tuition.vercel.app/)**
 
 ---
 *Developed for Tirupur Home Tuition Academy (Est. 2009).*
