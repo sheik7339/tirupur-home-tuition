@@ -1,25 +1,107 @@
-# Tirupur Home Tuition Academy 🎓
+# Tirupur Home Tuition Academy Website
 
-Welcome to the official repository for the **Tirupur Home Tuition Academy** website. 
+A modern, responsive education website built to showcase home tutoring services in Tirupur.
 
-This is a premium, high-conversion, lead-generating landing page designed specifically for an educational institute in Tirupur, modeled after elite Ed-Tech platforms.
-
-## ✨ Features
-- **Modern & Elite Design**: Clean, structured geometric UI with a premium "light mode" aesthetics using Tailwind CSS.
-- **FormSubmit Integration**: Live inquiry contact form that sends student leads directly to the registered Gmail account (`crazysheik2005@gmail.com`).
-- **Responsive Review Grid**: Perfectly perfectly auto-stacking testimonial section built natively with CSS Grid for flawless mobile experiences. 
-- **Sticky Navigation**: Smooth internal scrolling to different sections with a fully customized mobile hamburger menu. 
-- **SEO Optimized**: Clean HTML5 semantics and metadata to ensure localized visibility in Tirupur.
-
-## 🛠 Tech Stack
-- **HTML5** & **Vanilla Javascript**
-- **Tailwind CSS** (via CDN for rapid deployment)
-- **Phosphor Icons** (for sharp, lightweight vector graphics)
-- **Google Fonts** (Inter & Poppins for an institutional feel)
-
-## 🚀 Live Demo
-The site is deployed and accessible right here:
-👉 **[tirupur-home-tuition.vercel.app](https://tirupur-home-tuition.vercel.app/)**
+This project demonstrates a clean UI, conversion-focused design, and a mobile-first layout suitable for tuition centres and educational institutes.
 
 ---
-*Developed for Tirupur Home Tuition Academy (Est. 2009).*
+
+## 🌐 Live Demo
+
+https://tirupur-home-tuition.vercel.app/
+
+---
+
+## 📌 Features
+
+• Modern and professional UI
+• Fully responsive design
+• Mobile-first layout
+• Course sections for multiple classes
+• Subject categories display
+• Parent testimonials section
+• Contact and enquiry form
+• Google Maps integration
+• Floating WhatsApp and Call buttons
+• SEO optimized structure
+
+---
+
+## 🎓 Services Highlighted
+
+The website promotes home tutoring services including:
+
+* Primary Classes (I–V)
+* Middle School (VI–VIII)
+* Secondary (IX–X)
+* Higher Secondary (XI–XII)
+
+Subjects include:
+
+* Mathematics
+* Science
+* English
+* Physics
+* Chemistry
+* Accounts
+* Biology
+* Hindi
+
+Supported boards:
+
+* CBSE
+* ICSE
+* IGCSE
+* NIOS
+* ISC
+* IB
+* State Board
+
+---
+
+## 🛠 Tech Stack
+
+HTML5
+Tailwind CSS
+Vanilla JavaScript
+
+---
+
+## 📱 Responsive Design
+
+The website is optimized for:
+
+* Desktop
+* Tablet
+* Mobile devices
+
+---
+
+## 📞 Contact Information
+
+Tirupur Home Tuition Academy
+No:6, Near Old Market
+Demonte 1st Street
+Amarjothi Garden
+Tirupur – 641604
+
+Phone: +91 8460533093
+
+---
+
+## 🚀 Deployment
+
+The project is deployed using **Vercel**.
+
+---
+
+## 📌 Project Purpose
+
+This project was built as a **demo website for tuition centres** to showcase how modern websites can help educational institutes attract more students and improve online visibility.
+
+---
+
+## 👨‍💻 Author
+
+Sheik Mohammed
+Full Stack Web Developer
