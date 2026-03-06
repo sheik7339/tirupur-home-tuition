@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tirupur Home Tuition Academy</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+
+    <meta name="description"
+        content="Expert home tutors for Classes 1–12 in Tirupur. Personalized coaching for CBSE, ICSE, IGCSE and State Board students.">
+
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb', // Requested Deep Blue
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(37,99,235,0.08)',
+                        'hover': '0 20px 40px -10px rgba(37,99,235,0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="font-sans text-slate-600 bg-slate-50 antialiased overflow-x-hidden">
+
+    <!-- Floating Contact Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <a href="tel:+918460533093"
+            class="group flex items-center justify-center w-14 h-14 bg-primary-600 text-white rounded-full shadow-hover hover:scale-110 transition-all duration-300 relative">
+            <i class="ph-fill ph-phone text-2xl"></i>
+            <span
+                class="absolute right-16 bg-slate-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap">Call
+                Now</span>
+        </a>
+        <a href="https://wa.me/918460533093" target="_blank"
+            class="group flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-hover hover:scale-110 transition-all duration-300 relative">
+            <i class="ph-fill ph-whatsapp-logo text-3xl"></i>
+            <span
+                class="absolute right-16 bg-slate-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity whitespace-nowrap">WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header
+        class="fixed w-full top-0 z-40 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-white/20"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <img src="assets/logo.png" alt="Tirupur Home Tuition Logo" class="h-10 w-auto object-contain">
+                    <div>
+                        <h1
+                            class="font-heading font-bold text-lg text-slate-900 leading-tight group-hover:text-primary-600 transition-colors">
+                            Tirupur Home<br><span class="text-primary-600 text-sm">Tuition Academy</span></h1>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#home"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="#courses"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">Courses</a>
+                    <a href="#subjects"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">Subjects</a>
+                    <a href="#about"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">Why Us</a>
+                    <a href="#testimonials"
+                        class="text-sm font-medium text-slate-700 hover:text-primary-600 transition-colors">Reviews</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="#contact"
+                        class="hidden md:inline-flex px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-full hover:bg-primary-700 shadow-md hover:shadow-hover transition-all duration-300 hover:-translate-y-0.5">
+                        Book Free Demo
+                    </a>
+                    <button class="lg:hidden text-slate-600 text-2xl p-2" id="mobile-menu-btn">
+                        <i class="ph ph-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden absolute top-full left-0 w-full bg-white shadow-soft transition-all duration-300 origin-top scale-y-0 opacity-0 border-t border-slate-100"
+            id="mobile-menu">
+            <div class="flex flex-col p-4 gap-2">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#courses" class="mobile-link">Courses</a>
+                <a href="#subjects" class="mobile-link">Subjects</a>
+                <a href="#about" class="mobile-link">Why Us</a>
+                <a href="#testimonials" class="mobile-link">Reviews</a>
+                <a href="#contact" class="mobile-link bg-primary-50 text-primary-700 font-semibold mt-2">Book Free
+                    Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Ultra-Clean Geometric Light Hero Section -->
+    <section id="home" class="relative pt-10 pb-16 lg:pt-32 lg:pb-24 bg-slate-50 overflow-hidden">
+        <!-- Structural Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <!-- Diagonal structural split bg -->
+            <div
+                class="absolute top-0 right-0 w-[80%] md:w-[60%] h-full bg-primary-50 rounded-bl-[80px] lg:rounded-bl-[200px]">
+            </div>
+            <!-- Geometric dot pattern -->
+            <div
+                class="absolute top-10 right-10 w-64 h-64 bg-[radial-gradient(#cbd5e1_2px,transparent_2px)] [background-size:24px_24px] opacity-40">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="reveal-left text-center lg:text-left mt-8 lg:mt-0">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-lg bg-white border border-slate-200 text-slate-700 text-xs md:text-sm font-bold mb-4 md:mb-8 shadow-sm tracking-wide uppercase">
+                        <i class="ph-fill ph-student text-primary-600 text-base md:text-lg"></i> Tirupur's Elite
+                        Mentorship
+                    </div>
+
+                    <h1
+                        class="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold text-slate-900 leading-[1.2] lg:leading-[1.1] mb-4 md:mb-6">
+                        Empower Your Child's <br>
+                        <span class="text-primary-600 relative inline-block mt-1 lg:mt-0">
+                            Academic Journey
+                            <svg class="absolute w-full h-2 md:h-3 -bottom-1 left-0 text-primary-200"
+                                viewBox="0 0 100 10" preserveAspectRatio="none">
+                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4"
+                                    fill="transparent" />
+                            </svg>
+                        </span>
+                    </h1>
+
+                    <p
+                        class="text-base lg:text-lg text-slate-600 mb-6 md:mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
+                        World-class personalized 1-on-1 home tutoring in Tirupur. Expert educators for CBSE, ICSE, IGCSE
+                        & State Board.
+                    </p>
+
+                    <div class="flex flex-row flex-wrap justify-center lg:justify-start items-center gap-3 md:gap-4">
+                        <a href="#contact"
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 md:px-8 md:py-4 bg-primary-600 text-white font-bold rounded-xl shadow-md transition-all duration-300">
+                            Book Free Demo <i class="ph-bold ph-arrow-right ml-2 text-base md:text-lg"></i>
+                        </a>
+                        <div class="flex gap-3 w-full sm:w-auto">
+                            <a href="tel:+918460533093"
+                                class="flex-1 sm:flex-none inline-flex items-center justify-center px-5 py-3.5 md:px-6 md:py-4 bg-white text-slate-700 font-bold rounded-xl border border-slate-200 shadow-sm transition-all duration-300">
+                                <i class="ph-fill ph-phone text-primary-600 text-lg md:text-xl"></i>
+                            </a>
+                            <a href="https://wa.me/918460533093" target="_blank"
+                                class="flex-1 sm:flex-none inline-flex items-center justify-center px-5 py-3.5 md:px-6 md:py-4 bg-[#25D366]/10 text-[#25D366] font-bold rounded-xl transition-all duration-300">
+                                <i class="ph-fill ph-whatsapp-logo text-lg md:text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Illustration / Interactive Elements -->
+                <div class="relative reveal-right lg:ml-auto w-full mt-4 lg:mt-0 px-4 md:px-0">
+                    <div
+                        class="relative z-10 bg-white rounded-3xl lg:rounded-[2rem] p-3 lg:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100">
+                        <img src="assets/hero.png" alt="Premium Education Mentor"
+                            class="w-full h-auto rounded-2xl bg-primary-50">
+
+                        <!-- Statistics Badge Overlay -->
+                        <div
+                            class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-slate-100 hidden md:flex items-center gap-4">
+                            <div
+                                class="w-14 h-14 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 text-2xl">
+                                <i class="ph-fill ph-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading font-bold text-slate-900 text-xl">15+ Years</h4>
+                                <p class="text-sm text-slate-500 font-medium">Educational Legacy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Trust Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-10 lg:-mt-16 reveal-up">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-slate-100 text-center">
+                <div class="px-2">
+                    <div class="flex items-center justify-center text-yellow-400 text-2xl mb-2"><i
+                            class="ph-fill ph-star"></i></div>
+                    <div class="font-heading text-3xl font-bold text-slate-900 mb-1">4.7 Rating</div>
+                    <div class="text-sm text-slate-500">Average Rating</div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-center text-primary-500 text-2xl mb-2"><i
+                            class="ph-fill ph-users"></i></div>
+                    <div class="font-heading text-3xl font-bold text-slate-900 mb-1">96+</div>
+                    <div class="text-sm text-slate-500">Parent Reviews</div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-center text-primary-500 text-2xl mb-2"><i
+                            class="ph-fill ph-calendar-check"></i></div>
+                    <div class="font-heading text-3xl font-bold text-slate-900 mb-1">15+ Years</div>
+                    <div class="text-sm text-slate-500">Experience</div>
+                </div>
+                <div class="px-2">
+                    <div class="flex items-center justify-center text-primary-500 text-2xl mb-2"><i
+                            class="ph-fill ph-chalkboard-teacher"></i></div>
+                    <div class="font-heading text-3xl font-bold text-slate-900 mb-1">Expert</div>
+                    <div class="text-sm text-slate-500">Experienced Tutors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Courses Section -->
+    <section id="courses" class="py-20 lg:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                <span class="text-primary-600 font-semibold tracking-wider uppercase text-sm mb-2 block">Our
+                    Programs</span>
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-slate-900 mb-4">Tailored Learning
+                    Experiences</h2>
+                <p class="text-slate-600">Comprehensive courses designed to strengthen fundamentals and maximize exam
+                    performance.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Course Card 1 -->
+                <div
+                    class="group bg-white rounded-3xl p-6 border border-slate-100 shadow-soft hover:shadow-hover hover:-translate-y-2 hover:border-primary-100 transition-all duration-300 reveal-up flex flex-col h-full">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 text-2xl mb-6">
+                        <i class="ph-duotone ph-backpack"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Primary Classes</h3>
+                    <p class="text-primary-600 text-sm font-medium mb-4">Class I to V</p>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">Core subjects including Math, Science, and English
+                        to build a strong foundation.</p>
+                    <div class="border-t border-slate-100 pt-4 mt-auto">
+                        <p class="text-xs text-slate-500 mb-1">Starting from</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-heading font-bold text-xl text-slate-900">₹500 <span
+                                    class="text-sm font-normal text-slate-500">/hr</span></span>
+                            <a href="#contact"
+                                class="text-primary-600 font-medium text-sm hover:underline flex items-center gap-1 group-hover:gap-2 transition-all">Enroll
+                                <i class="ph-bold ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div
+                    class="group bg-white rounded-3xl p-6 border border-slate-100 shadow-soft hover:shadow-hover hover:-translate-y-2 hover:border-primary-100 transition-all duration-300 reveal-up flex flex-col h-full delay-100">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 text-2xl mb-6">
+                        <i class="ph-duotone ph-book-open"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Middle School</h3>
+                    <p class="text-primary-600 text-sm font-medium mb-4">Class VI to VIII</p>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">In-depth focus on Mathematics, Science, and core
+                        subjects to prep for high school.</p>
+                    <div class="border-t border-slate-100 pt-4 mt-auto">
+                        <p class="text-xs text-slate-500 mb-1">Starting from</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-heading font-bold text-xl text-slate-900">₹500 <span
+                                    class="text-sm font-normal text-slate-500">/hr</span></span>
+                            <a href="#contact"
+                                class="text-primary-600 font-medium text-sm hover:underline flex items-center gap-1 group-hover:gap-2 transition-all">Enroll
+                                <i class="ph-bold ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div
+                    class="group bg-white rounded-3xl p-6 border border-slate-100 shadow-soft hover:shadow-hover hover:-translate-y-2 hover:border-primary-100 transition-all duration-300 reveal-up flex flex-col h-full delay-200">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 text-2xl mb-6">
+                        <i class="ph-duotone ph-student"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Secondary</h3>
+                    <p class="text-primary-600 text-sm font-medium mb-4">Class IX & X</p>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">Rigorous board exam preparation with specialized
+                        tutors for major subjects.</p>
+                    <div class="border-t border-slate-100 pt-4 mt-auto">
+                        <p class="text-xs text-slate-500 mb-1">Starting from</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-heading font-bold text-xl text-slate-900">₹500 <span
+                                    class="text-sm font-normal text-slate-500">/hr</span></span>
+                            <a href="#contact"
+                                class="text-primary-600 font-medium text-sm hover:underline flex items-center gap-1 group-hover:gap-2 transition-all">Enroll
+                                <i class="ph-bold ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 4 -->
+                <div
+                    class="group bg-white rounded-3xl p-6 border border-slate-100 shadow-soft hover:shadow-hover hover:-translate-y-2 hover:border-primary-100 transition-all duration-300 reveal-up flex flex-col h-full delay-300">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-600 text-2xl mb-6">
+                        <i class="ph-duotone ph-certificate"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-1">Higher Secondary</h3>
+                    <p class="text-primary-600 text-sm font-medium mb-4">Class XI & XII</p>
+                    <p class="text-slate-500 text-sm mb-6 flex-grow">Specialized subject coaching for Science & Commerce
+                        streams. Focus on boards.</p>
+                    <div class="border-t border-slate-100 pt-4 mt-auto">
+                        <p class="text-xs text-slate-500 mb-1">Starting from</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-heading font-bold text-xl text-slate-900">₹500 <span
+                                    class="text-sm font-normal text-slate-500">/hr</span></span>
+                            <a href="#contact"
+                                class="text-primary-600 font-medium text-sm hover:underline flex items-center gap-1 group-hover:gap-2 transition-all">Enroll
+                                <i class="ph-bold ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-sm text-slate-500 mt-8 reveal-up">* We also provide Higher Education Assistance
+                for B.Com and BCA students.</p>
+        </div>
+    </section>
+
+    <!-- 4. Subjects Section -->
+    <section id="subjects" class="py-20 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                <h2 class="font-heading text-3xl font-bold text-slate-900 mb-4">Master Every Subject</h2>
+                <p class="text-slate-600">Expert faculty dedicated to specific subjects to ensure deep understanding.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Subject Items -->
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up">
+                    <div
+                        class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-function"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Mathematics</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-100">
+                    <div
+                        class="w-12 h-12 rounded-full bg-green-50 text-green-600 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-flask"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Science</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-translate"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">English</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-300">
+                    <div
+                        class="w-12 h-12 rounded-full bg-sky-50 text-sky-500 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-atom"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Physics</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up">
+                    <div
+                        class="w-12 h-12 rounded-full bg-rose-50 text-rose-500 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-test-tube"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Chemistry</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-100">
+                    <div
+                        class="w-12 h-12 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-calculator"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Accounts</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-200">
+                    <div
+                        class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-leaf"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Biology</span>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:shadow-soft hover:-translate-y-1 border border-slate-100 hover:border-primary-200 reveal-up delay-300">
+                    <div
+                        class="w-12 h-12 rounded-full bg-orange-50 text-orange-500 flex items-center justify-center text-2xl">
+                        <i class="ph-fill ph-text-aa"></i>
+                    </div>
+                    <span class="font-semibold text-slate-800">Hindi</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Curriculum Section -->
+    <section class="py-16 bg-white overflow-hidden border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 reveal-up">
+                <div class="md:w-1/3 text-center md:text-left">
+                    <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Supported Boards</h3>
+                    <p class="text-slate-600 text-sm">We adapt to your child's specific school curriculum.</p>
+                </div>
+                <div class="md:w-2/3 flex flex-wrap gap-3 justify-center md:justify-end">
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">CBSE</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">ICSE</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">IGCSE</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">NIOS</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">ISC</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">IB</span>
+                    <span
+                        class="px-6 py-3 bg-slate-50 text-slate-700 font-semibold rounded-xl border border-slate-200 hover:border-primary-400 hover:text-primary-600 transition-colors shadow-sm cursor-default">State
+                        Board</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Why Choose Us & 7. How It Works -->
+    <section id="about" class="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Abstract gradient background -->
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600 rounded-full mix-blend-screen filter blur-[120px] opacity-40">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500 rounded-full mix-blend-screen filter blur-[120px] opacity-20">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Why Choose Us Grid -->
+            <div class="mb-24">
+                <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                    <span class="text-primary-400 font-semibold tracking-wider uppercase text-sm mb-2 block">Why Choose
+                        Us</span>
+                    <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">Empowering Students Through
+                        Personalized Attention</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors reveal-up">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-chalkboard-teacher"></i>
+                        </div>
+                        <h4 class="font-heading font-bold mb-2">Experienced Tutors</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Highly qualified professionals dedicated to
+                            student success and academic growth.</p>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors reveal-up delay-100">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-user-focus"></i>
+                        </div>
+                        <h4 class="font-heading font-bold mb-2">Personal Attention</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">One-to-one mentorship that adapts to the
+                            student's unique pace of learning.</p>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors reveal-up delay-200">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-exam"></i>
+                        </div>
+                        <h4 class="font-heading font-bold mb-2">Exam Prep Support</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Strategic planning, targeted mock tests, and
+                            comprehensive revision for boards.</p>
+                    </div>
+
+                    <div
+                        class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors reveal-up">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-primary-500/20 text-primary-400 flex items-center justify-center text-2xl mb-6">
+                            <i class="ph-fill ph-clock"></i>
+                        </div>
+                        <h4 class="font-heading font-bold mb-2">Flexible Timings</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">Schedule classes comfortably at slots that
+                            work best for your family.</p>
+                    </div>
+
+                    <div
+                        class="md:col-span-2 bg-gradient-to-r from-primary-600 to-primary-800 rounded-3xl p-8 flex items-center gap-6 reveal-up delay-100">
+                        <div
+                            class="w-16 h-16 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center text-3xl">
+                            <i class="ph-fill ph-house-line"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-xl mb-2">Home & Online Classes</h4>
+                            <p class="text-primary-100 text-sm leading-relaxed">We bring premium education to your
+                                doorstep or screens. Choose between physical in-person tutoring or interactive online
+                                sessions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works (Horizontal Timeline) -->
+            <div class="bg-slate-800/50 rounded-[2.5rem] p-10 lg:p-16 border border-white/5 reveal-up">
+                <div class="text-center mb-12">
+                    <h3 class="font-heading text-3xl font-bold">How It Works</h3>
+                </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Line connecting steps -->
+                    <div class="hidden md:block absolute top-10 left-0 w-full h-1 bg-white/10 z-0"></div>
+                    <div
+                        class="hidden md:block absolute top-10 left-0 w-1/2 h-1 bg-gradient-to-r from-primary-500 to-transparent z-0">
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-10 relative z-10">
+                        <!-- Step 1 -->
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 mx-auto rounded-full bg-slate-800 border-4 border-slate-700 flex items-center justify-center text-2xl font-bold text-primary-400 mb-6 shadow-lg shadow-black/20">
+                                01
+                            </div>
+                            <h4 class="font-heading font-bold text-lg mb-2">Contact the academy</h4>
+                            <p class="text-slate-400 text-sm">Call or fill out our enquiry form to share your child's
+                                needs.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 mx-auto rounded-full bg-primary-600 border-4 border-slate-700 flex items-center justify-center text-2xl font-bold text-white mb-6 shadow-lg shadow-primary-600/30">
+                                02
+                            </div>
+                            <h4 class="font-heading font-bold text-lg mb-2">Tutor assigned</h4>
+                            <p class="text-slate-400 text-sm">We carefully match the best experienced tutor for a demo
+                                class.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 mx-auto rounded-full bg-slate-800 border-4 border-slate-700 flex items-center justify-center text-2xl font-bold text-primary-400 mb-6 shadow-lg shadow-black/20">
+                                03
+                            </div>
+                            <h4 class="font-heading font-bold text-lg mb-2">Start learning</h4>
+                            <p class="text-slate-400 text-sm">Finalize schedule and commence regular customized tuition.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Testimonials Section (Perfect Responsive Grid) -->
+    <section id="testimonials" class="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
+        <!-- Decoration background -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal-up">
+                <span
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-700 font-bold uppercase text-xs tracking-wider mb-4">
+                    <i class="ph-fill ph-star text-primary-600"></i> Real Results
+                </span>
+                <h2 class="font-heading text-3xl md:text-5xl font-bold text-slate-900 mb-6">What Parents Are Saying</h2>
+                <p class="text-slate-600 text-lg">Join the hundreds of happy families in Tirupur who trust our
+                    mentorship.</p>
+            </div>
+
+            <!-- Fully Responsive Grid (No horizontal scrolls, pure stacking) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 py-4 reveal-up">
+
+                <!-- Review Card 1 (Left) -->
+                <div
+                    class="bg-white p-8 lg:p-10 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex text-yellow-400 text-sm gap-1">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                        <i class="ph-fill ph-quotes text-3xl text-slate-100"></i>
+                    </div>
+                    <p class="text-slate-700 font-medium mb-8 leading-relaxed flex-grow text-sm lg:text-base">"Tirupur
+                        Home Tuition Academy provides an excellent learning experience. The tutors are highly
+                        experienced and the curriculum is very strong. Real value for money."</p>
+                    <div class="flex items-center gap-4 mt-auto border-t border-slate-100 pt-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary-50 flex items-center justify-center text-primary-600 font-bold font-heading">
+                            RP</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm lg:text-base">R. Prakash</h5>
+                            <p class="text-xs text-slate-500 font-medium tracking-wide uppercase mt-0.5">Class 10 Parent
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 2 (Center - Elevated & Dark) -->
+                <div
+                    class="bg-gradient-to-br from-primary-600 to-primary-800 p-8 lg:p-10 rounded-[2rem] shadow-[0_20px_40px_-10px_rgba(37,99,235,0.3)] text-white flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 relative overflow-hidden md:-translate-y-4 z-10">
+                    <div class="absolute -right-6 -top-6 text-white/10 text-[120px] font-serif leading-none rotate-12">"
+                    </div>
+                    <div class="flex items-center justify-between mb-8 relative z-10">
+                        <div class="flex text-yellow-400 text-sm gap-1">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i>
+                        </div>
+                    </div>
+                    <p
+                        class="text-white font-medium mb-8 leading-relaxed flex-grow relative z-10 text-sm lg:text-base shadow-sm">
+                        "My daughter struggled terribly with Mathematics, but after getting a home tutor from here, her
+                        grades improved drastically. Highly recommended for CBSE board prep!"</p>
+                    <div class="flex items-center gap-4 mt-auto border-t border-white/20 pt-6 relative z-10">
+                        <div
+                            class="w-12 h-12 rounded-full bg-white flex items-center justify-center text-primary-600 font-bold font-heading">
+                            SM</div>
+                        <div>
+                            <h5 class="font-bold text-white text-sm lg:text-base">Sangeetha M.</h5>
+                            <p class="text-xs text-primary-200 font-medium tracking-wide uppercase mt-0.5">Class 8
+                                Parent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review Card 3 (Right) -->
+                <div
+                    class="bg-white p-8 lg:p-10 rounded-[2rem] shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-slate-100 flex flex-col h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                    <div class="flex items-center justify-between mb-8">
+                        <div class="flex text-yellow-400 text-sm gap-1">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i
+                                class="ph-fill ph-star-half"></i>
+                        </div>
+                        <i class="ph-fill ph-quotes text-3xl text-slate-100"></i>
+                    </div>
+                    <p class="text-slate-700 font-medium mb-8 leading-relaxed flex-grow text-sm lg:text-base">"The
+                        tutors are extremely punctual and dedicated. My son is very comfortable asking doubts now.
+                        Scheduling is also very flexible to our family's timings. Thank you!"</p>
+                    <div class="flex items-center gap-4 mt-auto border-t border-slate-100 pt-6">
+                        <div
+                            class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center text-green-600 font-bold font-heading">
+                            DK</div>
+                        <div>
+                            <h5 class="font-bold text-slate-900 text-sm lg:text-base">Dinesh Kumar</h5>
+                            <p class="text-xs text-slate-500 font-medium tracking-wide uppercase mt-0.5">Class 12 Parent
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Quick Enquiry Form & 10. Contact Section -->
+    <section id="contact" class="py-20 lg:py-28 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[2rem] shadow-hover border border-slate-100 overflow-hidden reveal-up">
+                <div class="grid lg:grid-cols-5">
+
+                    <!-- Contact Info & Map (Left) -->
+                    <div
+                        class="lg:col-span-2 bg-slate-50 p-10 lg:p-12 border-r border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Get in Touch</h3>
+                            <p class="text-slate-500 mb-10 text-sm">We'd love to hear from you. Secure a spot for your
+                                child today.</p>
+
+                            <div class="space-y-8">
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0 text-xl">
+                                        <i class="ph-fill ph-map-pin"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-900 mb-1">Our Location</h5>
+                                        <p class="text-slate-600 text-sm leading-relaxed">No:6, Near Old
+                                            Market,<br>Demonte 1st Street,<br>Amarjothi Garden,<br>Tirupur – 641604,
+                                            Tamil Nadu.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center flex-shrink-0 text-xl">
+                                        <i class="ph-fill ph-phone-call"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-slate-900 mb-1">Call Us</h5>
+                                        <p class="text-slate-600 text-sm"><a href="tel:+918460533093"
+                                                class="hover:text-primary-600 font-medium">+91 8460533093</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 flex gap-3">
+                                <a href="tel:+918460533093"
+                                    class="flex-1 flex items-center justify-center gap-2 py-3 bg-slate-900 text-white rounded-xl font-medium text-sm hover:bg-slate-800 transition-colors">
+                                    <i class="ph-fill ph-phone-call"></i> Call Button
+                                </a>
+                                <a href="https://wa.me/918460533093" target="_blank"
+                                    class="flex-1 flex items-center justify-center gap-2 py-3 bg-[#25D366] text-white rounded-xl font-medium text-sm hover:bg-[#20bd5a] transition-colors">
+                                    <i class="ph-fill ph-whatsapp-logo"></i> WhatsApp
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Google Maps Embed -->
+                        <div class="mt-12 h-48 w-full rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.8!2d77.34!3d11.1085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sin!4v161111111111"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Form (Right) -->
+                    <div class="lg:col-span-3 p-10 lg:p-12">
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-8">Request a Callback / Demo</h3>
+
+                        <!-- FormSubmit integrated as requested previously, or just a mock form -->
+                        <form action="https://formsubmit.co/crazysheik2005@gmail.com" method="POST" id="enquiryForm"
+                            class="space-y-6">
+                            <input type="hidden" name="_subject" value="New Website Enquiry">
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Student Name</label>
+                                    <input type="text" name="Student Name" required
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="Enter full name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                                    <input type="tel" name="Phone Number" required
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="+91">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Class</label>
+                                    <div class="relative">
+                                        <select name="Class" required
+                                            class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all appearance-none cursor-pointer">
+                                            <option value="" disabled selected>Select Class</option>
+                                            <option>Classes I - V</option>
+                                            <option>Classes VI - VIII</option>
+                                            <option>Classes IX - X</option>
+                                            <option>Classes XI - XII</option>
+                                            <option>College (B.Com/BCA)</option>
+                                        </select>
+                                        <i
+                                            class="ph-bold ph-caret-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-slate-700 mb-2">Subject Needed</label>
+                                    <input type="text" name="Subject"
+                                        class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                        placeholder="e.g. Mathematics, Science">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-slate-700 mb-2">Message (Optional)</label>
+                                <textarea name="Message" rows="4"
+                                    class="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                                    placeholder="Any specific requirements..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-4 bg-primary-600 text-white font-bold rounded-xl hover:bg-primary-700 shadow-md shadow-primary-500/30 transition-all duration-300 hover:-translate-y-1">
+                                Request Tutor
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Branding -->
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6 bg-white p-2 rounded-xl w-max">
+                        <img src="assets/logo.png" alt="Logo" class="h-8 w-auto object-contain">
+                        <h2 class="font-heading font-bold text-slate-900 leading-tight pr-2">Tirupur<br><span
+                                class="text-primary-600 text-xs text-xs">Home Tuition</span></h2>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                        Empowering students with personalized home tutoring in Tirupur since 2009.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-800 text-white flex items-center justify-center hover:bg-primary-600 transition-colors"><i
+                                class="ph-fill ph-twitter-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 font-medium">
+                        <li><a href="#home" class="hover:text-primary-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary-400 transition-colors">About Us</a></li>
+                        <li><a href="#courses" class="hover:text-primary-400 transition-colors">Our Classes</a></li>
+                        <li><a href="#subjects" class="hover:text-primary-400 transition-colors">Subjects Offered</a>
+                        </li>
+                        <li><a href="#testimonials" class="hover:text-primary-400 transition-colors">Parent Reviews</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Courses -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-6">Courses</h4>
+                    <ul class="space-y-3 text-sm text-slate-400 font-medium">
+                        <li><a href="#courses" class="hover:text-primary-400 transition-colors">Primary Classes</a></li>
+                        <li><a href="#courses" class="hover:text-primary-400 transition-colors">Middle School</a></li>
+                        <li><a href="#courses" class="hover:text-primary-400 transition-colors">Secondary (IX-X)</a>
+                        </li>
+                        <li><a href="#courses" class="hover:text-primary-400 transition-colors">Higher Secondary</a>
+                        </li>
+                        <li><a href="#contact" class="hover:text-primary-400 transition-colors">Book a Free Demo</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Details -->
+                <div>
+                    <h4 class="text-white font-heading font-semibold mb-6">Contact Details</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-map-pin text-primary-400 text-lg"></i>
+                            <span class="leading-relaxed">No:6, Demonte 1st St, Amarjothi Garden, Tirupur –
+                                641604</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-phone-call text-primary-400 text-lg"></i>
+                            <a href="tel:+918460533093" class="hover:text-white font-medium transition-colors">+91
+                                8460533093</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-envelope text-primary-400 text-lg"></i>
+                            <a href="mailto:info@tirupurtuition.com"
+                                class="hover:text-white font-medium transition-colors">info@tirupurtuition.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 font-medium">
+                <p>&copy; 2026 Tirupur Home Tuition Academy. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+/* Clean, Modern & Professional UI Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .shadow-soft {
+        box-shadow: 0 10px 40px -10px rgba(37, 99, 235, 0.08);
+        /* Primary color shadow */
+    }
+
+    .shadow-hover {
+        box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.18);
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+}
+
+/* Base resets */
+html,
+body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbar for carousel */
+.carousel-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Smooth Soft Animations */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 8s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll Reveal Animations (Controlled via Intersection Observer) */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Delay modifiers for stagger effects */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+/* Mobile Menu Highlight */
+.mobile-link {
+    display: block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #475569;
+    transition: all 0.2s ease;
+}
+
+.mobile-link:hover {
+    background-color: #eff6ff;
+    /* primary-50 */
+    color: #2563eb;
+    /* primary-600 */
+}
